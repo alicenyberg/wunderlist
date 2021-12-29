@@ -11,12 +11,23 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
     $hashed_password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 }
 
+// if the email already exist in database:
 $statement = $database->prepare('SELECT email FROM users WHERE email = :email');
 $statement->bindParam(':email', $email, PDO::PARAM_STR);
 $statement->execute();
 $compareEmail = $statement->fetch(PDO::FETCH_ASSOC);
 if ($compareEmail) {
     $_SESSION['errors'][] = "Maybe try another email, this already exists!";
+    redirect('/register.php');
+}
+
+//if the username already exists in database:
+$statement = $database->prepare('SELECT username FROM users WHERE username = :username');
+$statement->bindParam(':username', $username, PDO::PARAM_STR);
+$statement->execute();
+$checkUsername = $statement->fetch(PDO::FETCH_ASSOC);
+if ($checkUsername) {
+    $_SESSION['errors'][] = "Maybe try another username, this already exists!";
     redirect('/register.php');
 }
 
