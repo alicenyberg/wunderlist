@@ -12,7 +12,7 @@ if (isset($_POST['email'], $_POST['password'])) {
     $user = $statement->fetch(PDO::FETCH_ASSOC);
 
     if ($user === false) {
-        redirect('/index.php');
+        redirect('/');
     }
     if (password_verify($_POST['password'], $user['password'])) {
         $_SESSION['user'] = [
@@ -20,6 +20,6 @@ if (isset($_POST['email'], $_POST['password'])) {
             "name" => $user['username'],
             "email" => $user['email'],
         ];
-        redirect('/');
+        redirect('/index.php');
     }
 }
