@@ -7,9 +7,9 @@ require __DIR__ . '../../../autoload.php';
 if (isset($_FILES['image'])) {
     $tmp_name = $_FILES['image']['tmp_name'];
     $filetype = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-    $filetype = $_SESSION['user']['id'] . '_avatar.' . $filetype;
+    $filetype = $_SESSION['user']['id'] . '-avatar.' . $filetype;
     $user_id = $_SESSION['user']['id'];
-    move_uploaded_file($tmp_name, __DIR__ . '../../../../uploads' . $filename);
+    move_uploaded_file($tmp_name, __DIR__ . '../../../../uploads/' . $filename);
 
     $statement = $database->prepare(
         'UPDATE users SET image_url = :image_url WHERE id = :user_id'

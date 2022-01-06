@@ -13,9 +13,9 @@
 <?php endif; ?>
 
 <h3>Change your profile picture</h3>
-<form action="app/users/avatar/upload.php" method="post">
-    <label for="avatar">Upload image in JPG/PNG format</label>
-    <input type="file" name="avatar" id="avatar" accept=".png, .jpg, .jpeg">
+<form action="app/users/image/upload.php" method="post">
+    <label for="image">Upload image in JPG/PNG format</label>
+    <input type="file" name="image" id="image" accept=".png, .jpg, .jpeg">
     <button type="submit">Upload image</button>
 </form>
 
@@ -25,7 +25,6 @@
     <input type="email" name="email" id="email">
     <button type="submit">Change email address</button>
 </form>
-
 
 <h3>Change your password</h3>
 <form action="app/users/update/password" method="post">
