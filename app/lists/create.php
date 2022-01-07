@@ -11,6 +11,6 @@ if (isset($_POST['title'])) {
 
     $statement = $database->prepare('INSERT INTO lists (title, user_id) VALUES (:title, :user_id)');
     $statement->bindParam(':title', $title, PDO::PARAM_STR);
-    $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
     $statement->execute();
 }
