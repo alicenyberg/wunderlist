@@ -13,7 +13,7 @@
 <?php endif; ?>
 
 <h3>Change your profile picture</h3>
-<form action="app/users/image/upload.php" method="post">
+<form action="app/users/image/upload.php" method="post" enctype="multipart/form-data">
     <label for="image">Upload image in JPG/PNG format</label>
     <input type="file" name="image" id="image" accept=".png, .jpg, .jpeg">
     <button type="submit">Upload image</button>
