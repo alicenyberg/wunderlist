@@ -12,21 +12,21 @@
     <?php unset($_SESSION['errors']) ?>
 <?php endif; ?>
 
-<h3>Change your profile picture</h3>
+<p>Change your profile picture</p>
 <form action="app/users/image/upload.php" method="post" enctype="multipart/form-data">
     <label for="image">Upload image in JPG/PNG format</label>
     <input type="file" name="image" id="image" accept=".png, .jpg, .jpeg">
     <button type="submit">Upload image</button>
 </form>
 
-<h3>Change your email address</h3>
+<p>Change your email address</p>
 <form action="app/users/update/email.php" method="post">
     <label for="email">New email address:</label>
     <input type="email" name="email" id="email">
     <button type="submit">Change email address</button>
 </form>
 
-<h3>Change your password</h3>
+<p>Change your password</p>
 <form action="app/users/update/password.php" method="post">
     <label for="password">Current password: </label>
     <input type="password" name="password" id="password">
