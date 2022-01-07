@@ -23,6 +23,6 @@ if (isset($_POST['email'])) {
     //to change the email
     $statement = $database->prepare('UPDATE users SET email = :email WHERE id = :user_id');
     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-    $statement->bindParam(':email', $email, PDO::PARAM_INT);
+    $statement->bindParam(':email', $email, PDO::PARAM_STR);
     $statement->execute();
 }
