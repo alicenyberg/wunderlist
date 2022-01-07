@@ -27,10 +27,10 @@
 </form>
 
 <h3>Change your password</h3>
-<form action="app/users/update/password" method="post">
+<form action="app/users/update/password.php" method="post">
     <label for="password">Current password: </label>
     <input type="password" name="password" id="password">
-    <label for="password">New password: </label>
-    <input type="password" name="password" id="password">
+    <label for="new_password">New password: </label>
+    <input type="password" name="new_password" id="password">
     <button type="submit">Change password</button>
 </form>
