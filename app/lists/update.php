@@ -4,15 +4,18 @@ declare(strict_types=1);
 
 require __DIR__ . '/../autoload.php';
 
-if (isset($_POST['list_id'])) {
-    $list_id = $_POST['list_id'];
 
-    $statement = $database->prepare('DELETE FROM tasks WHERE list_id = :list_id');
-    $statement->bindParam(':list_id', $listId, PDO::PARAM_INT);
-    $statement->execute();
+$list_id = $_GET['list_id'];
+$user_id = $_SESSION['user']['id'];
 
-    $statement = $database->prepare('DELETE FROM lists WHERE id = :id');
-    $statement->bindParam(':id', $listId, PDO::PARAM_INT);
+if (isset($_POST['title'], $_POST['content'], $_POST['deadline'])) {
+    $trim_title = trim($_POST['title']);
+    $title = filter_var($trim_title, FILTER_SANITIZE_STRING);
+
+    $statement = $database->prepare("UPDATE lists SET title = :title WHERE id = :id AND user_id = :user_id");
+    $statement->bindParam(':id', $list_id, PDO::PARAM_INT);
+    $statement->bindParam(':title', $title, PDO::PARAM_INT);
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
     $statement->execute();
 }
 
