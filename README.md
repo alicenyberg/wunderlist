@@ -10,18 +10,20 @@ Add the installation instructions.
 
 # Code Review
 
-Code review written by [Jane Doh](https://github.com/username).
+Code review written by [Sophie Wulff](https://github.com/sowulff).
 
-1. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-2. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-3. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-4. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-5. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-6. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-7. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-8. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-9. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
-10. `example.js:10-15` - Remember to think about X and this could be refactored using the amazing Y function.
+1. `lists.php:20-22` - Try to use either <a> or <button>. They can't be combined.
+2. `register.php` - maybe add a minimum of characters when choosing password by adding an if-statement.
+3. `ists.php ` - Seems like the functionality for updating a list i there, just an edit-button missing!
+4. `index.php` - Maybe when the user is logged in the homepage could show all lists or tasks for today ex.
+5. `register.php` - Make the user repeat their password is an idea. For in cases like when the user misspells it when registering
+6. `lists.php` - Since deleting lists is permanent you can add a window alert to your delete-button to prevent the user from deleting by mistake.
+7. `profile.php` - right now the profile image the user uploaded dosen’t show on the page anywhere, solution would be to use img tag and print it!
+8. `LICENCE` - don’t forgot to add the license in the license file.
+9. `index.php` - Maybe add a welcome message when user is logged in.
+10. `tasks.php` - Java script is going to be handy when dealing with the checkboxes in the task-file!
+
+Overall you’ve done great so far in this Christmas projekt!
 
 # Testers
 
