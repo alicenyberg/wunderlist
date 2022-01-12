@@ -18,6 +18,9 @@
                 <a class="nav-link" href="/lists.php">Lists</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/tasks.php">Tasks</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/app/users/logout.php">Logout</a>
             </li>
         <?php else : ?>
