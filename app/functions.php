@@ -30,17 +30,39 @@ function get_all_lists(object $database)
     return $lists;
 }
 
+
 function get_tasks(PDO $database)
 {
     $user_id = $_SESSION['user']['id'];
-    $list_id = $_GET['id'];
 
-    $statement = $database->prepare("SELECT * from tasks WHERE user_id = :user_id AND list_id = :list_id");
+    $statement = $database->prepare("SELECT tasks.id, tasks.list_id, tasks.user_id, tasks.content, tasks.title, tasks.deadline_at, tasks.completed_at, lists.title FROM tasks INNER JOIN lists ON task.list_id = lists.id WHERE tasks.user_id = :user_id");
     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-    $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
     $statement->execute();
 
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     return $tasks;
+}
+
+function get_tasks_list(PDO $database)
+{
+    $user_id = $_SESSION['user']['id'];
+
+    $statement = $database->prepare("SELECT * from tasks WHERE user_id = :user_id AND list_id = :list_id");
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->execute();
+
+    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    return $tasks;
+}
+
+function get_image(PDO $database, $user_id)
+{
+    $statement = $database->prepare("SELECT image_url FROM users WHERE id = :id");
+    $statement->bindParam(':id', $user_id, PDO::PARAM_INT);
+    $statement->execute();
+    $image = $statement->fetch(PDO::FETCH_ASSOC);
+
+    return $image['image_url'];
 }
