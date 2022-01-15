@@ -12,6 +12,11 @@
     <?php unset($_SESSION['errors']) ?>
 <?php endif; ?>
 
+<!-- profile image views here -->
+
+<?php $image_url = get_image($database); ?>
+<img src="<?= $image_url; ?>">
+
 <p>Change your profile picture</p>
 <form action="app/users/image/upload.php" method="post" enctype="multipart/form-data">
     <label for="image">Upload image in JPG/PNG format</label>

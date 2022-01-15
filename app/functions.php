@@ -57,12 +57,20 @@ function get_tasks_list(PDO $database)
     return $tasks;
 }
 
-function get_image(PDO $database, $user_id)
+function get_image(PDO $database)
 {
+    $user_id = $_SESSION['user']['id'];
+
     $statement = $database->prepare("SELECT image_url FROM users WHERE id = :id");
     $statement->bindParam(':id', $user_id, PDO::PARAM_INT);
     $statement->execute();
-    $image = $statement->fetch(PDO::FETCH_ASSOC);
 
-    return $image['image_url'];
+    $image = $statement->fetch(PDO::FETCH_ASSOC);
+    $image_url = $image['image_url'];
+
+    if ($image_url === null) {
+        return '/uploads/placeholder.jpg';
+    }
+
+    return 'uploads/' . $image_url;
 }
