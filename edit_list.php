@@ -11,8 +11,8 @@ $tasks = get_tasks_list($database);
 $lists = get_all_lists($database);
 
 foreach ($lists as $list) :
-    if ($list['id'] === $id) : ?>
-        <p> <?php $list['title']; ?></p>
+    if ($list['id'] == $id) : ?>
+        <h3> <?= $list['title']; ?></h3>
     <?php endif; ?>
 <?php endforeach; ?>
 
@@ -29,7 +29,7 @@ foreach ($lists as $list) :
 
 <!-- update list title -->
 <h4>Update your list title here</h4>
-<form action="app/lists/update.php?id <?= $id ?>" method="post">
+<form action="app/lists/update.php?id=<?= $id ?>" method="post">
     <label for="title">New title: </label>
     <input type="text" name="title" id="title" required>
     <button type="submit">Update title</button>
@@ -37,7 +37,7 @@ foreach ($lists as $list) :
 
 <!-- add task -->
 <h4>Add new tasks to your list</h4>
-<form action="app/task/create.php?id <?= $id ?>" method="post">
+<form action="app/task/create.php?id=<?= $id ?>" method="post">
     <label for="title">Add a title: </label>
     <input type="text" name="title" id="title" required> <br>
     <label for="content">Add some content: </label>
@@ -49,7 +49,7 @@ foreach ($lists as $list) :
 
 <!-- button to delete your list -->
 <div>
-    <h4>Want to delete the list with all your tasks?</h4>
+    <h4>Want to delete the list?</h4>
     <button>
         <a href="/app/lists/delete.php?id=<?= $list['id']; ?>">Delete </a>
     </button>

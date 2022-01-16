@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../../autoload.php';
 
+//here we change the users email
+
 if (isset($_POST['email'])) {
     $trimmed_email = trim($_POST['email']);
     $email = filter_var($trimmed_email, FILTER_SANITIZE_EMAIL);
@@ -13,9 +15,9 @@ if (isset($_POST['email'])) {
     $statement = $database->prepare('SELECT email FROM users WHERE email = :email');
     $statement->bindParam(':email', $email, PDO::PARAM_STR);
     $statement->execute();
-    $compareEmail = $statement->fetch(PDO::FETCH_ASSOC);
+    $compare_email = $statement->fetch(PDO::FETCH_ASSOC);
 
-    if ($compareEmail) {
+    if ($compare_email) {
         $_SESSION['errors'] = "Maybe try another email address, this one already exists.";
         redirect('/profile.php');
     }
