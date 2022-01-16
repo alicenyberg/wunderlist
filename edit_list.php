@@ -2,23 +2,55 @@
 
 require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php';
-
 ?>
 
+<?php
+$id = $_GET['id'];
+$user_id = $_SESSION['user']['id'];
+$tasks = get_tasks_list($database);
+$lists = get_all_lists($database);
+
+foreach ($lists as $list) :
+    if ($list['id'] === $id) : ?>
+        <p> <?php $list['title']; ?></p>
+    <?php endif; ?>
+<?php endforeach; ?>
+
+<?php foreach ($tasks as $task) : ?>
+    <?php if ($user_id && $list_id = $id) : ?>
+        <p>Task: <?= $task['title']; ?> </p>
+        <p>Deadline: <?= $task['deadline_at']; ?> </p>
+        <p>Completed at: <?= $task['completed_at']; ?> </p>
+    <?php endif ?>
+<?php endforeach ?>
+
+<!-- button to go back to lists -->
+<button> <a href="lists.php">Take me back to all my lists!</a></button> <br>
+
 <!-- update list title -->
-<form action="app/lists/update.php" method="post">
+<h4>Update your list title here</h4>
+<form action="app/lists/update.php?id <?= $id ?>" method="post">
     <label for="title">New title: </label>
     <input type="text" name="title" id="title" required>
     <button type="submit">Update title</button>
-</form>
+</form> <br>
 
 <!-- add task -->
-<form action="app/task/create.php" method="post">
+<h4>Add new tasks to your list</h4>
+<form action="app/task/create.php?id <?= $id ?>" method="post">
     <label for="title">Add a title: </label>
-    <input type="text" name="title" id="title" required>
+    <input type="text" name="title" id="title" required> <br>
     <label for="content">Add some content: </label>
-    <input type="text" name="content" id="content" required>
+    <input type="text" name="content" id="content" required> <br>
     <label for="deadline">Add a deadline: </label>
-    <input type="date" name="deadline" id="deadline" required>
+    <input type="date" name="deadline" id="deadline" required> <br>
     <button type="submit">Add task!</button>
-</form>
+</form> <br>
+
+<!-- button to delete your list -->
+<div>
+    <h4>Want to delete the list with all your tasks?</h4>
+    <button>
+        <a href="/app/lists/delete.php?id=<?= $list['id']; ?>">Delete </a>
+    </button>
+</div> <br>

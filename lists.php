@@ -4,13 +4,7 @@ require __DIR__ . '/views/header.php';
 
 ?>
 
-
-<form action="app/lists/create.php" method="POST">
-    <label for="title">The name of your list:</label>
-    <input type="text" name="title" id="title">
-    <button type="submit">Create list</button>
-</form>
-
+<!-- here we can create a list -->
 <ul>
     <?php
     $lists = get_all_lists($database);
@@ -18,10 +12,19 @@ require __DIR__ . '/views/header.php';
         <li>
             <?= $list['title'] ?><br>
             <button>
-                <a href="/app/lists/delete.php?id=<?= $list['id']; ?>">Delete </a>
+                <a href="edit_list.php?id=<?php $list['id']; ?>">Edit your list</a>
+            </button>
+            <button>
+                <a href="edit_task.php?id=<?php $list['id']; ?>">Edit/add tasks</a>
             </button>
         </li>
     <?php endforeach ?>
 </ul>
+
+<form action="app/lists/create.php" method="post">
+    <label for="title">The name of your list:</label> <br>
+    <input type="text" name="title" id="title">
+    <button type="submit">Create list</button>
+</form>
 
 <?php require __DIR__ . '/views/footer.php'; ?>
