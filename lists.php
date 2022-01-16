@@ -10,12 +10,12 @@ require __DIR__ . '/views/header.php';
     $lists = get_all_lists($database);
     foreach ($lists as $list) : ?>
         <li>
-            <?= $list['title'] ?><br>
+            <h4> <?= $list['title'] ?></h4><br>
             <button>
-                <a href="edit_list.php?id=<?php $list['id']; ?>">Edit your list</a>
+                <a href="edit_list.php?id=<?= $list['id']; ?>">Edit your list</a>
             </button>
             <button>
-                <a href="edit_task.php?id=<?php $list['id']; ?>">Edit tasks</a>
+                <a href="edit_task.php?id=<?= $list['id']; ?>">Edit tasks</a>
             </button>
         </li>
     <?php endforeach ?>

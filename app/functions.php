@@ -47,9 +47,11 @@ function get_tasks(PDO $database)
 function get_tasks_list(PDO $database)
 {
     $user_id = $_SESSION['user']['id'];
+    $list_id = $_GET['id'];
 
     $statement = $database->prepare("SELECT * from tasks WHERE user_id = :user_id AND list_id = :list_id");
     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
     $statement->execute();
 
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -57,6 +59,9 @@ function get_tasks_list(PDO $database)
     return $tasks;
 }
 
+function todays_tasks(PDO $database)
+{
+}
 function completed_tasks(PDO $database)
 {
     $user_id = $_SESSION['user']['id'];
