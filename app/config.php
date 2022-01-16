@@ -3,6 +3,6 @@
 declare(strict_types=1);
 
 return [
-    'title' => 'Project Name',
+    'title' => 'To do',
     'database_path' => sprintf('sqlite:%s/database/database.db', __DIR__),
 ];
