@@ -15,7 +15,7 @@ require __DIR__ . '/views/header.php';
                 <a href="edit_list.php?id=<?php $list['id']; ?>">Edit your list</a>
             </button>
             <button>
-                <a href="edit_task.php?id=<?php $list['id']; ?>">Edit/add tasks</a>
+                <a href="edit_task.php?id=<?php $list['id']; ?>">Edit tasks</a>
             </button>
         </li>
     <?php endforeach ?>

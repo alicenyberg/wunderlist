@@ -6,9 +6,6 @@
             <a class="nav-link" href="/index.php">Home</a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="/about.php">About</a>
-        </li>
 
         <?php if (logged_in()) : ?>
             <li class="nav-item">
@@ -18,7 +15,7 @@
                 <a class="nav-link" href="/lists.php">Lists</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/tasks.php">Tasks</a>
+                <a class="nav-link" href="/todays_tasks.php">Uncompleted tasks</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/app/users/logout.php">Logout</a>
