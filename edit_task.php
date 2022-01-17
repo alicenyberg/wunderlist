@@ -9,6 +9,7 @@ $task_id = $_GET['id'];
 $tasks = get_tasks($database);
 $user_id = $_SESSION['user']['id'];
 ?>
+
 <!-- here you can update your task -->
 <?php foreach ($tasks as $task) :
     if ($task_id === $task['id']) : ?>
@@ -27,5 +28,5 @@ $user_id = $_SESSION['user']['id'];
         <button>
             <a href="/app/task/delete.php?id= <?= $task['id']; ?>">
         </button>
-    <?php endif; ?>
-<?php endforeach; ?>
+    <?php endif ?>
+<?php endforeach ?>
