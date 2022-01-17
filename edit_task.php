@@ -37,15 +37,15 @@ $user_id = $_SESSION['user']['id'];
                         <button class="update" id="wrapped" type="submit" class="btn btn-primary">Update task</button>
                     </div>
                 </form> <br>
-
-
-                <!-- here you can delete a task -->
-                <div class="delete-wrapper">
-                    <h4>Want to delete your task?</h4>
-                    <button class="delete">
-                        <a href="/app/task/delete.php?id= <?= $task['id']; ?>">delete</a>
-                    </button>
-                </div>
-            <?php endif ?>
-        <?php endforeach ?>
             </div>
+
+            <!-- here you can delete a task -->
+            <div class="delete-wrapper">
+                <h4>Want to delete your task?</h4>
+                <button class="delete">
+                    <a href="/app/task/delete.php?id= <?= $task['id']; ?> " onclick=" return confirm('Are you sure you want to delete the list? It will also remove all tasks.');">Delete</a>
+                </button>
+            </div>
+        <?php endif ?>
+    <?php endforeach ?>
+</div>

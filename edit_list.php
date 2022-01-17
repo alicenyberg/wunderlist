@@ -63,7 +63,7 @@ $tasks = get_tasks_list($database);
     <div class="delete-wrapper">
         <h4>Want to delete the list?</h4>
         <button class="delete">
-            <a href="/app/lists/delete.php?id=<?= $list['id']; ?>">Delete </a>
+            <a href="/app/lists/delete.php?id=<?= $list['id']; ?>" onclick=" return confirm('Are you sure you want to delete the list? It will also remove all tasks.');">Delete </a>
         </button>
     </div> <br>
 </div>

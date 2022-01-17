@@ -4,9 +4,9 @@
 <div class="wrapper">
     <h1><?php echo $config['title']; ?></h1>
 
-    <?php
-    if (logged_in()) : ?>
+    <?php if (logged_in()) : ?>
         <article>
+            <h3>Todays tasks: </h3>
             <?php $todays = todays_tasks($database); ?>
             <?php if ($todays) : ?>
                 <h4>Tasks due today: <?= date('Y-m-d') ?></h4>
