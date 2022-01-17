@@ -10,8 +10,6 @@ $tasks = get_tasks($database);
 $user_id = $_SESSION['user']['id'];
 ?>
 
-
-
 <!-- here you can update your task -->
 <?php foreach ($tasks as $task) :
     if ($task_id == $task['id']) : ?>
@@ -20,11 +18,11 @@ $user_id = $_SESSION['user']['id'];
         <?php $status = task_status($task); ?>
         <form action="app/task/update.php?id=<?= $task_id ?>" method="post">
             <label for="title">Add a new title: </label>
-            <input type="text" name="title" id="title" required> <br>
+            <input type="text" name="title" id="title"> <br>
             <label for="content">Update the description: </label>
-            <input type="text" name="content" id="content" required> <br>
+            <input type="text" name="content" id="content"> <br>
             <label for="deadline">Update the deadline: </label>
-            <input type="date" name="deadline" id="deadline" required> <br>
+            <input type="date" name="deadline" id="deadline"> <br>
 
             <!-- here you can mark task as completed and uncompleted, i tried with checkboxes but didn't make it work, so radio buttons instead. -->
             <label for="completed">completed</label>

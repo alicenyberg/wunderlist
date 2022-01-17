@@ -30,7 +30,7 @@
         <?php if ($_SESSION['user']['id']) : ?>
             <h4> <?= $task['title'] ?> </h4>
             <li>
-                <p> List: <?= $task['list_title'] ?> <br>
+                <p>
                     Deadline: <?= $task['deadline_at'] ?> <br>
                     Description: <?= $task['content'] ?> <br></p>
             </li>
