@@ -13,5 +13,5 @@ if (isset($_GET['id'])) {
     $statement->bindParam(':id', $id, PDO::PARAM_INT);
     $statement->execute();
 
-    redirect('/');
+    redirect('/tasks.php');
 }

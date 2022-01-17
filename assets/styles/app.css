@@ -15,8 +15,13 @@ body {
   background-color: sienna;
 }
 
+.navbar-nav {
+  display: flex;
+  display: inline-block;
+}
 .nav-item {
   padding: 3px;
+  display: inline-block;
 }
 
 .nav-link {
@@ -44,7 +49,7 @@ a:visited {
 }
 
 button {
-  margin: 0;
+  margin: 10px;
   font-size: 1rem;
   padding: 0.4rem;
   border-style: 1px solid transparent;
@@ -83,4 +88,10 @@ ul {
 
 .delete-wrapper {
   margin: 30px;
+}
+
+.profile-wrapper {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
 }

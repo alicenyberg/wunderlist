@@ -25,4 +25,4 @@ if ($_POST['status'] == "completed") {
 
     $statement->execute();
 }
-redirect('/edit_task.php');
+redirect('/tasks.php');

@@ -59,7 +59,7 @@ function get_tasks_list(PDO $database)
     return $tasks;
 }
 
-function task_status($task)
+function status($task)
 {
     if (isset($task['completed_at'])) {
         $status['completed'] = 'checked';
@@ -68,7 +68,6 @@ function task_status($task)
         $status['completed'] = '';
         $status['uncompleted'] = 'checked';
     }
-
     return $status;
 }
 
@@ -125,7 +124,7 @@ function get_image(PDO $database)
     $image_url = $image['image_url'];
 
     if ($image_url === null) {
-        return '/uploads/placeholder.jpg';
+        return '/uploads/placeholder.jpeg';
     }
 
     return 'uploads/' . $image_url;

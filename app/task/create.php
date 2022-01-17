@@ -24,9 +24,9 @@ if (isset($_POST['title'], $_POST['deadline'], $_POST['content'])) {
     $statement->bindParam(':list_id', $list_id, PDO::PARAM_INT);
     $statement->bindParam(':title', $title, PDO::PARAM_STR);
     $statement->bindParam(':content', $content, PDO::PARAM_STR);
-    $statement->bindParam(':created_at', $created_at, PDO::PARAM_INT);
+    $statement->bindParam(':created_at', $created_at, PDO::PARAM_STR);
     $statement->bindParam(':deadline_at', $deadline_at, PDO::PARAM_STR);
 
     $statement->execute();
 }
-redirect('/lists.php');
+redirect('/tasks.php');

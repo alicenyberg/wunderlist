@@ -74,4 +74,4 @@ if ($_POST['status'] == "completed") {
     $statement->execute();
 }
 
-redirect('/');
+redirect('/tasks.php');
