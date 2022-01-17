@@ -2,7 +2,7 @@
 <?php require __DIR__ . '/views/header.php'; ?>
 
 
-<h2>Your uncompleted tasks</h2>
+<h2>Your uncompleted tasks: </h2>
 <ul>
     <?php $tasks = uncompleted_tasks($database);
     foreach ($tasks as $task) : ?>
@@ -23,7 +23,7 @@
     <?php endforeach ?>
 </ul>
 
-<h2>Your completed tasks</h2>
+<h2>Your completed tasks: </h2>
 <ul>
     <?php $tasks = completed_tasks($database);
     foreach ($tasks as $task) : ?>

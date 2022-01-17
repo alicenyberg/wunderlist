@@ -27,9 +27,60 @@ body {
   color: beige;
 }
 
-.home {
+.wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+button {
+  margin: 0;
+  font-size: 1rem;
+  padding: 0.4rem;
+  border-style: 1px solid transparent;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  background-color: rgb(80, 71, 71);
+  transition-duration: 0.4s ease-in;
+}
+
+button:hover {
+  background-color: rgb(119, 110, 110);
+}
+
+.delete {
+  background-color: rgb(124, 38, 27);
+}
+
+.delete:hover {
+  background-color: rgb(121, 49, 39);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.lists {
+  margin: 30px;
+}
+
+.lists p {
+  font-size: 1.3rem;
+}
+
+.delete-wrapper {
+  margin: 30px;
 }
