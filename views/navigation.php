@@ -15,7 +15,7 @@
                 <a class="nav-link" href="/lists.php">Lists</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/todays_tasks.php">Uncompleted tasks</a>
+                <a class="nav-link" href="/uncompleted.php">Uncompleted tasks</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/app/users/logout.php">Logout</a>

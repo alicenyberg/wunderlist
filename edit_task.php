@@ -41,11 +41,12 @@ $user_id = $_SESSION['user']['id'];
             <label for="checkbox-uncompleted">not completed</label>
             <input type="checkbox" name="checkbox" id="checkbox-uncompleted">
             <button type="submit">Submit</button>
-        </form>
+        </form> <br>
 
         <!-- here you can delete a task -->
+        <small>Want to delete your task?</small>
         <button>
-            <a href="/app/task/delete.php?id= <?= $task['id']; ?>">
+            <a href="/app/task/delete.php?id= <?= $task['id']; ?>">delete</a>
         </button>
     <?php endif ?>
 <?php endforeach ?>
