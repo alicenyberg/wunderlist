@@ -9,8 +9,8 @@ $task_id = $_GET['id'];
 
 // completed and uncompleted task here
 
-if ($_POST['status'] === "completed") {
-    $completed_at = date("Y-m-d");
+if ($_POST['status'] == "completed") {
+    $completed_at = date('Y-m-d');
 
     $statement = $database->prepare('UPDATE tasks SET completed_at = :completed_at WHERE id = :id AND user_id = :user_id');
     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
@@ -25,4 +25,4 @@ if ($_POST['status'] === "completed") {
 
     $statement->execute();
 }
-redirect('/');
+redirect('/edit_task.php');

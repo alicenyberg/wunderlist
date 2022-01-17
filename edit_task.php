@@ -17,6 +17,7 @@ $user_id = $_SESSION['user']['id'];
     if ($task_id == $task['id']) : ?>
         <h4> <?= $task['title']; ?> </h4>
         <p>Deadline at: <?= $task['deadline_at']; ?> </p>
+        <?php $status = task_status($task); ?>
         <form action="app/task/update.php?id=<?= $task_id ?>" method="post">
             <label for="title">Add a new title: </label>
             <input type="text" name="title" id="title" required> <br>
@@ -24,24 +25,16 @@ $user_id = $_SESSION['user']['id'];
             <input type="text" name="content" id="content" required> <br>
             <label for="deadline">Update the deadline: </label>
             <input type="date" name="deadline" id="deadline" required> <br>
-            <button type="submit">Update task!</button>
-        </form>
-        <!-- here you can mark task as completed and uncompleted -->
-        <form action="app/task/status.php" method="post">
-            <input type="hidden" name="id" value="<?= $task['id'] ?>">
-            <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
-            <label for="checkbox">completed</label>
-            <input type="checkbox" name="checkbox" id="checkbox">
-            <button type="submit">Submit</button>
-        </form>
 
-        <form action="app/task/status.php" method="post">
-            <input type="hidden" name="id" value="<?= $task['id'] ?>">
-            <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
-            <label for="checkbox-uncompleted">not completed</label>
-            <input type="checkbox" name="checkbox" id="checkbox-uncompleted">
-            <button type="submit">Submit</button>
+            <!-- here you can mark task as completed and uncompleted, i tried with checkboxes but didn't make it work, so radio buttons instead. -->
+            <label for="completed">completed</label>
+            <input name="status" id="completed" value="completed" type="radio" <?= $status['completed'] ?>>
+            <label for="uncompleted">uncompleted</label>
+            <input name="status" id="uncompleted" value="uncompleted" type="radio" <?= $status['uncompleted'] ?>>
+            <div class="button_wrapper">
+                <button class="update" id="wrapped" type="submit" class="btn btn-primary">Update task</button>
         </form> <br>
+
 
         <!-- here you can delete a task -->
         <small>Want to delete your task?</small>
