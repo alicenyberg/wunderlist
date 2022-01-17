@@ -1,12 +1,14 @@
-INSERT MANDATORY GIF
+<img src="https://media.giphy.com/media/h5Kj3oDLtuh6NoRy5x/giphy.gif">
 
 # Project Title
 
-Text about the project and why it exists. This would also be a great place to link the project online.
+A to-do website where you can get organized! 
 
 # Installation
 
-Add the installation instructions.
+1. Clone the repository and open it with a code editor.
+2. Open a localhost in your terminal by writing: php -S localhost:8000
+3. Now your ready to visit the localhost in your browser!
 
 # Code Review
 
@@ -29,5 +31,5 @@ Overall you’ve done great so far in this Christmas projekt!
 
 Tested by the following people:
 
-1. Jane Doe
-2. John Doe
+1. Amanda Hultén
+2. Agnes Skönvall
