@@ -62,6 +62,18 @@ function get_tasks_list(PDO $database)
 function todays_tasks(PDO $database)
 {
 }
+
+function status($task)
+{
+    if (isset($task['completed_at'])) {
+        $status['completed'] = 'checked';
+        $status['uncompleted'] = '';
+    } else {
+        $status['completed'] = '';
+        $status['uncompleted'] = 'checked';
+    }
+    return $status;
+}
 function completed_tasks(PDO $database)
 {
     $user_id = $_SESSION['user']['id'];

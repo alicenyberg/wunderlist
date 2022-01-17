@@ -10,9 +10,11 @@ $tasks = get_tasks($database);
 $user_id = $_SESSION['user']['id'];
 ?>
 
+
+
 <!-- here you can update your task -->
 <?php foreach ($tasks as $task) :
-    if ($task_id === $task['id']) : ?>
+    if ($task_id == $task['id']) : ?>
         <h4> <?= $task['title']; ?> </h4>
         <p>Deadline at: <?= $task['deadline_at']; ?> </p>
         <form action="app/task/update.php?id=<?= $task_id ?>" method="post">
@@ -24,6 +26,23 @@ $user_id = $_SESSION['user']['id'];
             <input type="date" name="deadline" id="deadline" required> <br>
             <button type="submit">Update task!</button>
         </form>
+        <!-- here you can mark task as completed and uncompleted -->
+        <form action="app/task/status.php" method="post">
+            <input type="hidden" name="id" value="<?= $task['id'] ?>">
+            <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
+            <label for="checkbox">completed</label>
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <button type="submit">Submit</button>
+        </form>
+
+        <form action="app/task/status.php" method="post">
+            <input type="hidden" name="id" value="<?= $task['id'] ?>">
+            <input type="hidden" name="list" id="list" value="<?= $task['list_id'] ?>">
+            <label for="checkbox-uncompleted">not completed</label>
+            <input type="checkbox" name="checkbox" id="checkbox-uncompleted">
+            <button type="submit">Submit</button>
+        </form>
+
         <!-- here you can delete a task -->
         <button>
             <a href="/app/task/delete.php?id= <?= $task['id']; ?>">
