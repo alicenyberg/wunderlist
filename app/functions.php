@@ -59,11 +59,7 @@ function get_tasks_list(PDO $database)
     return $tasks;
 }
 
-function todays_tasks(PDO $database)
-{
-}
-
-function status($task)
+function task_status($task)
 {
     if (isset($task['completed_at'])) {
         $status['completed'] = 'checked';
@@ -72,8 +68,10 @@ function status($task)
         $status['completed'] = '';
         $status['uncompleted'] = 'checked';
     }
+
     return $status;
 }
+
 function completed_tasks(PDO $database)
 {
     $user_id = $_SESSION['user']['id'];
@@ -87,7 +85,6 @@ function completed_tasks(PDO $database)
     return $tasks;
 }
 
-
 function uncompleted_tasks(PDO $database)
 {
     $user_id = $_SESSION['user']['id'];
@@ -99,6 +96,21 @@ function uncompleted_tasks(PDO $database)
     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     return $tasks;
+}
+
+function todays_tasks(PDO $database)
+{
+    $user_id = $_SESSION['user']['id'];
+    $deadline_at = date('Y-m-d');
+
+    $statement = $database->prepare("SELECT * FROM tasks WHERE user_id = :user_id AND deadline_at = :deadline_at");
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->bindParam(':deadline_at', $deadline_at, PDO::PARAM_INT);
+    $statement->execute();
+
+    $todays = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    return $todays;
 }
 
 function get_image(PDO $database)
