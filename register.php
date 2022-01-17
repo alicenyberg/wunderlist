@@ -10,13 +10,15 @@
 
 <h2>Register</h2>
 <form action="app/users/register.php" method="post">
-    <label for="username">Username:</label>
-    <input name="username" id="username" type="text">
-    <label for="email">Email:</label>
-    <input name="email" id="email" type="email">
-    <label for="password">Select your password:</label>
-    <input name="password" id="password" type="password">
-    <button type="submit" class="register">Register</button>
+    <div class="mb-3">
+        <label for="username">Username:</label>
+        <input name="username" id="username" type="text">
+        <label for="email">Email:</label>
+        <input name="email" id="email" type="email">
+        <label for="password">Select your password:</label>
+        <input name="password" id="password" type="password">
+        <button type="submit" class="btn btn-primary">Register</button>
+    </div>
 </form>
 
 

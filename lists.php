@@ -7,10 +7,12 @@ require __DIR__ . '/views/header.php';
     <!-- here we can create a list -->
     <div>
         <h3> Create a new list: </h3>
-        <form action="app/lists/create.php" method="post">
-            <label for="title"></label> <br>
-            <input type="text" name="title" id="title">
-            <button type="submit">Create list</button>
+        <div class="mb-3">
+            <form action="app/lists/create.php" method="post">
+                <label for="title"></label> <br>
+                <input type="text" name="title" id="title">
+                <button type="submit">Create list</button>
+        </div>
         </form>
     </div>
 

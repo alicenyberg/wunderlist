@@ -7,7 +7,6 @@
     <?php
     if (logged_in()) : ?>
         <article>
-            <h4>Todays tasks: </h4>
             <?php $todays = todays_tasks($database); ?>
             <?php if ($todays) : ?>
                 <h4>Tasks due today: <?= date('Y-m-d') ?></h4>

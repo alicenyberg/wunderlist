@@ -22,29 +22,35 @@
     <!-- update profile info here -->
     <div class="profile-wrapper">
         <h4>Change your profile picture</h4>
-        <form action="app/users/image/upload.php" method="post" enctype="multipart/form-data">
-            <label for="image">Upload image in JPG/PNG format</label>
-            <input type="file" name="image" id="image" accept=".png, .jpg, .jpeg">
-            <button type="submit">Upload image</button>
+        <div class="mb-3">
+            <form action="app/users/image/upload.php" method="post" enctype="multipart/form-data">
+                <label for="image">Upload image in JPG/PNG format</label>
+                <input type="file" name="image" id="image" accept=".png, .jpg, .jpeg">
+                <button type="submit">Upload image</button>
+        </div>
         </form>
     </div>
 
     <div class="profile-wrapper">
         <h4>Change your email address</h4>
-        <form action="app/users/update/email.php" method="post">
-            <label for="email">New email address:</label>
-            <input type="email" name="email" id="email">
-            <button type="submit">Change email address</button>
+        <div class="mb-3">
+            <form action="app/users/update/email.php" method="post">
+                <label for="email">New email address:</label>
+                <input type="email" name="email" id="email">
+                <button type="submit">Change email address</button>
+        </div>
         </form>
     </div>
 
     <div class="profile-wrapper">
         <h4>Change your password</h4>
-        <form action="app/users/update/password.php" method="post">
-            <label for="password">Current password: </label>
-            <input type="password" name="password" id="password">
-            <label for="new_password">New password: </label>
-            <input type="password" name="new_password" id="password">
-            <button type="submit">Change password</button>
+        <div class="mb-3">
+            <form action="app/users/update/password.php" method="post">
+                <label for="password">Current password: </label>
+                <input type="password" name="password" id="password">
+                <label for="new_password">New password: </label>
+                <input type="password" name="new_password" id="password">
+                <button type="submit">Change password</button>
+        </div>
         </form>
     </div>

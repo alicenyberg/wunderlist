@@ -95,3 +95,10 @@ ul {
   display: flex;
   flex-direction: column;
 }
+.task-list {
+  margin-bottom: 30px;
+}
+
+.completed {
+  margin-bottom: 80px;
+}

@@ -104,7 +104,7 @@ function todays_tasks(PDO $database)
 
     $statement = $database->prepare("SELECT * FROM tasks WHERE user_id = :user_id AND deadline_at = :deadline_at");
     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-    $statement->bindParam(':deadline_at', $deadline_at, PDO::PARAM_INT);
+    $statement->bindParam(':deadline_at', $deadline_at, PDO::PARAM_STR);
     $statement->execute();
 
     $todays = $statement->fetchAll(PDO::FETCH_ASSOC);

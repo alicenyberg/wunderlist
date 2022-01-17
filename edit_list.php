@@ -34,24 +34,28 @@ $tasks = get_tasks_list($database);
     <!-- add task -->
     <div class="new-task">
         <h4>Add new tasks to your list</h4>
-        <form action="app/task/create.php?id=<?= $id ?>" method="post">
-            <label for="title">Add a title: </label>
-            <input type="text" name="title" id="title" required> <br>
-            <label for="content">Add some content: </label>
-            <input type="text" name="content" id="content" required> <br>
-            <label for="deadline">Add a deadline: </label>
-            <input type="date" name="deadline" id="deadline" required> <br>
-            <button type="submit">Add task!</button>
+        <div class="mb-3">
+            <form action="app/task/create.php?id=<?= $id ?>" method="post">
+                <label for="title">Add a title: </label>
+                <input type="text" name="title" id="title" required> <br>
+                <label for="content">Add some content: </label>
+                <input type="text" name="content" id="content" required> <br>
+                <label for="deadline">Add a deadline: </label>
+                <input type="date" name="deadline" id="deadline" required> <br>
+                <button type="submit">Add task!</button>
+        </div>
         </form> <br>
     </div>
 
     <!-- update list title -->
     <div class="update-list">
         <h4>Update your list title here</h4>
-        <form action="app/lists/update.php?id=<?= $id ?>" method="post">
-            <label for="title">New title: </label>
-            <input type="text" name="title" id="title" required>
-            <button type="submit">Update title</button>
+        <div class="mb-3">
+            <form action="app/lists/update.php?id=<?= $id ?>" method="post">
+                <label for="title">New title: </label>
+                <input type="text" name="title" id="title" required>
+                <button type="submit">Update title</button>
+        </div>
         </form> <br>
     </div>
 
