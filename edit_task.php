@@ -18,7 +18,7 @@ $user_id = $_SESSION['user']['id'];
             <h4> <?= $task['title']; ?> </h4>
             <p>Deadline at: <?= $task['deadline_at']; ?> </p>
             <p>Description: <?= $task['content']; ?> </p>
-            <?php $status = task_status($task); ?>
+            <?php $status = status($task); ?>
             <form action="app/task/update.php?id=<?= $task_id ?>" method="post">
                 <label for="title">Add a new title: </label>
                 <input type="text" name="title" id="title"> <br>
@@ -28,9 +28,9 @@ $user_id = $_SESSION['user']['id'];
                 <input type="date" name="deadline" id="deadline"> <br>
 
                 <!-- here you can mark task as completed and uncompleted, i tried with checkboxes but didn't make it work, so radio buttons instead. -->
-                <label for="completed">completed</label>
+                <label for="completed">Done</label>
                 <input name="status" id="completed" value="completed" type="radio" <?= $status['completed'] ?>>
-                <label for="uncompleted">uncompleted</label>
+                <label for="uncompleted">Not done</label>
                 <input name="status" id="uncompleted" value="uncompleted" type="radio" <?= $status['uncompleted'] ?>>
                 <div class="button_wrapper">
                     <button class="update" id="wrapped" type="submit" class="btn btn-primary">Update task</button>

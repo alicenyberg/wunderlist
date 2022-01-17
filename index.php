@@ -12,7 +12,7 @@
             <?php if ($todays) : ?>
                 <h4>Tasks due today: <?= date('Y-m-d') ?></h4>
                 <ul>
-                    <?php foreach ($todays_tasks as $task) : ?>
+                    <?php foreach ($todays as $task) : ?>
                         <li>
                             <h6> <?= $task['title'] ?> </h6>
                             <p>Description: <?= $task['content'] ?> </p>
@@ -25,11 +25,9 @@
             <?php else : ?>
                 <p>No tasks due today! </p>
             <?php endif ?>
-
         <?php else : ?>
             <h3>On this site you can do some amazing to do lists to make your life easier!</h3>
         <?php endif ?>
-
         </article>
 </div>
 <?php require __DIR__ . '/views/footer.php'; ?>

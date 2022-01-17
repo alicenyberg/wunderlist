@@ -15,7 +15,7 @@
 
                 </p>
             </li>
-            <small>Do you want to update your task?</small>
+            <h6>Do you want to update your task?</h6>
             <button>
                 <a href="/edit_task.php?id= <?= $task['id']; ?>">Update</a>
             </button>
