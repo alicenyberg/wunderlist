@@ -15,10 +15,10 @@ if (isset($_POST['deadline'])) {
     $deadline = $_POST['deadline'];
 }
 
-if ($deadline) {
+if ($deadline_at) {
     $statement = $database->prepare('UPDATE tasks SET deadline_at = :deadline_at WHERE id = :id AND user_id = :user_id');
 
-    $statement->bindParam(':deadline_at', $deadline, PDO::PARAM_STR);
+    $statement->bindParam(':deadline_at', $deadline_at, PDO::PARAM_STR);
     $statement->bindParam(':id', $task_id, PDO::PARAM_INT);
     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
 
@@ -47,12 +47,29 @@ if (isset($_POST['content'])) {
     $trim_content = trim($_POST['content']);
     $content = filter_var($trim_content, FILTER_SANITIZE_STRING);
 }
-if ($title) {
+if ($content) {
     $statement = $database->prepare('UPDATE tasks SET content = :content WHERE id = :id AND user_id = :user_id');
 
     $statement->bindParam(':content', $content, PDO::PARAM_STR);
     $statement->bindParam(':id', $task_id, PDO::PARAM_INT);
     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+    $statement->execute();
+}
+
+if ($_POST['status'] == "completed") {
+    $completed_at = date('Y-m-d');
+
+    $statement = $database->prepare('UPDATE tasks SET completed_at = :completed_at WHERE id = :id AND user_id = :user_id');
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->bindParam(':id', $task_id, PDO::PARAM_INT);
+    $statement->bindParam(':completed_at', $completed_at, PDO::PARAM_STR);
+
+    $statement->execute();
+} else {
+    $statement = $database->prepare('UPDATE tasks SET completed_at = null WHERE id = :id AND user_id = :user_id');
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->bindParam(':id', $task_id, PDO::PARAM_INT);
 
     $statement->execute();
 }
