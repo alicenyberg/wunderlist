@@ -2,7 +2,7 @@
 
 # Project Title
 
-A to-do website where you can get organized! 
+A to-do website where you can get organized!
 
 # Installation
 
@@ -33,3 +33,10 @@ Tested by the following people:
 
 1. Amanda Hultén
 2. Agnes Skönvall
+
+# Wunderlist+
+
+[Nema Vinkeloe Uuskyla](https://github.com/patrosk) added the following:
+
+1. `overview.php` New page called 'overview' where one sees all lists and their respective tasks. 'Overview'has been added to the nav bar and styling has been added to the css file.
+2. `complete_all.php` Logic that enables the user to check all tasks in a given list as completed with the click of a button.
