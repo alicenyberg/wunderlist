@@ -123,3 +123,13 @@ ul {
 .single-list h5 {
   color: sienna;
 }
+.single-list button {
+  margin: 0;
+}
+.checklist-form {
+  display: flex;
+  flex-direction: column;
+}
+.hidden {
+  display: none;
+}

@@ -39,6 +39,23 @@ $user_id = $_SESSION['user']['id'];
                 </form> <br>
             </div>
 
+            <!-- here you can add and edit checklists to your task -->
+            <div class="checklist-wrapper">
+                <div class="checklist-button">
+                    <button>Add checklist to this task</button>
+                </div>
+                <div class="checklist-form hidden">
+                    <ul></ul>
+                    <br>
+                    <label for="checklist-item"></label>
+                    <input type="text" name="checklist-item">
+                    <button>Add</button><br>
+                    <form action="" method="post">
+                        <button>Do you want to save this checklist?</button>
+                    </form>
+                </div>
+            </div>
+
             <!-- here you can delete a task -->
             <div class="delete-wrapper">
                 <h4>Want to delete your task?</h4>
@@ -49,3 +66,5 @@ $user_id = $_SESSION['user']['id'];
         <?php endif ?>
     <?php endforeach ?>
 </div>
+
+<?php require __DIR__ . '/views/footer.php';

@@ -27,7 +27,7 @@ $tasks = get_tasks_list($database);
                 <p>Task: <?= $task['title']; ?> </p>
                 <p>Deadline: <?= $task['deadline_at']; ?> </p>
                 <p>Description: <?= $task['content']; ?> </p>
-                <button> <a href="edit_task.php?id= <?= $task['id']; ?>">Edit task</a></button> <br>
+                <button> <a href="edit_task.php?id=<?= $task['id']; ?>">Edit task</a></button> <br>
             <?php endif ?>
         <?php endforeach ?>
     </div>
