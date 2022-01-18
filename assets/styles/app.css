@@ -102,3 +102,24 @@ ul {
 .completed {
   margin-bottom: 80px;
 }
+
+/* WUNDERLIST+ STYLING */
+.lists-wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 30px;
+}
+.lists-wrapper h3 {
+  text-decoration: underline;
+}
+.single-list ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0;
+}
+.single-list h5 {
+  color: sienna;
+}
