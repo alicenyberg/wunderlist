@@ -50,8 +50,8 @@ $user_id = $_SESSION['user']['id'];
                     <label for="checklist-item"></label>
                     <input type="text" name="checklist-item">
                     <button>Add</button><br>
-                    <form action="" method="post">
-                        <button>Do you want to save this checklist?</button>
+                    <form action="/app/task/save_checklist.php?id=<?= $task['id'] ?>" method="post">
+                        <button class="save-button">Do you want to save this checklist?</button>
                     </form>
                 </div>
             </div>
