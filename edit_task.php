@@ -45,12 +45,21 @@ $user_id = $_SESSION['user']['id'];
                     <button>Add checklist to this task</button>
                 </div>
                 <div class="checklist-form hidden">
+                    <h5>Checklist:</h5>
                     <ul></ul>
                     <br>
-                    <label for="checklist-item"></label>
-                    <input type="text" name="checklist-item">
-                    <button>Add</button><br>
                     <form action="/app/task/save_checklist.php?id=<?= $task['id'] ?>" method="post">
+                        <label for="checklist-item"></label>
+                        <input type="text" name="checklist-item" id=1>
+                        <label for="checklist-item"></label>
+                        <input type="text" name="checklist-item" id=2>
+                        <label for="checklist-item"></label>
+                        <input type="text" name="checklist-item" id=3>
+                        <label for="checklist-item"></label>
+                        <input type="text" name="checklist-item" id=4>
+                        <label for="checklist-item"></label>
+                        <input type="text" name="checklist-item" id=5>
+                        <button>Add</button><br>
                         <button class="save-button">Do you want to save this checklist?</button>
                     </form>
                 </div>
