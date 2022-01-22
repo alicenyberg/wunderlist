@@ -46,7 +46,7 @@ $user_id = $_SESSION['user']['id'];
                 </div>
                 <div class="checklist-form hidden">
                     <h5>Checklist:</h5>
-                    <!-- $checklist = get_checklist($database) -->
+                    <?php $checklist = get_checklist($database); ?>
                     <ul>
                         <!-- foreach ($checklist as $checklist_item) {
                             li
