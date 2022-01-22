@@ -17,7 +17,7 @@
                 </li>
                 <h6>Do you want to update your task?</h6>
                 <button>
-                    <a href="/edit_task.php?id= <?= $task['id']; ?>">Update</a>
+                    <a href="/edit_task.php?id=<?= $task['id']; ?>">Update</a>
                 </button>
             <?php endif ?>
         <?php endforeach ?>

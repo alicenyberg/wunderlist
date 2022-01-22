@@ -129,3 +129,19 @@ function get_image(PDO $database)
 
     return 'uploads/' . $image_url;
 }
+
+// WUNDERLIST + FUNCTIONS
+function get_checklist(PDO $database)
+{
+    $user_id = $_SESSION['user']['id'];
+    $task_id = $_GET['id'];
+
+    $statement = $database->prepare("SELECT * FROM checklists WHERE task_id = :task_id AND user_id = :user_id");
+    $statement->bindParam(':task_id', $task_id, PDO::PARAM_INT);
+    $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    $statement->execute();
+
+    $checklist = $statement->fetch(PDO::FETCH_ASSOC);
+
+    return $checklist;
+}

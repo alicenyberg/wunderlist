@@ -46,21 +46,28 @@ $user_id = $_SESSION['user']['id'];
                 </div>
                 <div class="checklist-form hidden">
                     <h5>Checklist:</h5>
-                    <ul></ul>
+                    <!-- $checklist = get_checklist($database) -->
+                    <ul>
+                        <!-- foreach ($checklist as $checklist_item) {
+                            li
+                            $name
+                            button complete/incomplete
+                            button delete
+                            li';} -->
+                    </ul>
                     <br>
                     <form action="/app/task/save_checklist.php?id=<?= $task['id'] ?>" method="post">
                         <label for="checklist-item"></label>
-                        <input type="text" name="checklist-item" id=1>
+                        <input type="text" name="checklist-item[]">
                         <label for="checklist-item"></label>
-                        <input type="text" name="checklist-item" id=2>
+                        <input type="text" name="checklist-item[]">
                         <label for="checklist-item"></label>
-                        <input type="text" name="checklist-item" id=3>
+                        <input type="text" name="checklist-item[]">
                         <label for="checklist-item"></label>
-                        <input type="text" name="checklist-item" id=4>
+                        <input type="text" name="checklist-item[]">
                         <label for="checklist-item"></label>
-                        <input type="text" name="checklist-item" id=5>
-                        <button>Add</button><br>
-                        <button class="save-button">Do you want to save this checklist?</button>
+                        <input type="text" name="checklist-item[]">
+                        <button>Add to checklist</button>
                     </form>
                 </div>
             </div>
