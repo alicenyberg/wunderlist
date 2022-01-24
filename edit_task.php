@@ -39,24 +39,38 @@ $user_id = $_SESSION['user']['id'];
                 </form> <br>
             </div>
 
-            <!-- here you can add and edit checklists to your task -->
+            <!-- WUNDERLIST+ -->
+            <!-- here you can add and edit the checklist for your task -->
+            <div class="display-checklist">
+                <?php $checklist = get_checklist($database); ?>
+                <?php if (isset($checklist)) : ?>
+                    <h5>Checklist:</h5>
+                    <ul>
+                        <?php foreach ($checklist as $item) : ?>
+                            <?php $is_checked = is_checked($item) ?>
+                            <li class="checklist-item">
+                                <!-- Mark checklist item as completed or uncompleted -->
+                                <form action="/app/task/checklist/update.php?id=<?= $item['id'] ?>&task_id=<?= $task['id'] ?>" method="post">
+                                    <input type="checkbox" name="checkbox" <?= $is_checked ?>></input>
+                                </form>
+                                <!-- The content of the checklist item -->
+                                <div>
+                                    <?= $item['content'] ?>
+                                </div>
+                                <!-- delete this checklist item -->
+                                <button><a href="/app/task/checklist/delete.php?id=<?= $item['id'] ?>&task_id=<?= $task['id'] ?>">delete</a></button>
+                            </li>
+                        <?php endforeach ?>
+                    </ul>
+                <?php endif ?>
+            </div>
             <div class="checklist-wrapper">
                 <div class="checklist-button">
                     <button>Add checklist to this task</button>
                 </div>
                 <div class="checklist-form hidden">
-                    <h5>Checklist:</h5>
-                    <?php $checklist = get_checklist($database); ?>
-                    <ul>
-                        <!-- foreach ($checklist as $checklist_item) {
-                            li
-                            $name
-                            button complete/incomplete
-                            button delete
-                            li';} -->
-                    </ul>
                     <br>
-                    <form action="/app/task/save_checklist.php?id=<?= $task['id'] ?>" method="post">
+                    <form action="/app/task/checklist/create.php?id=<?= $task['id'] ?>" method="post">
                         <label for="checklist-item"></label>
                         <input type="text" name="checklist-item[]">
                         <label for="checklist-item"></label>

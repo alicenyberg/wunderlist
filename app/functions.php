@@ -141,7 +141,16 @@ function get_checklist(PDO $database)
     $statement->bindParam(':user_id', $user_id, PDO::PARAM_INT);
     $statement->execute();
 
-    $checklist = $statement->fetch(PDO::FETCH_ASSOC);
+    $checklist = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     return $checklist;
+}
+function is_checked($checklist_item)
+{
+    if ($checklist_item['completed_at'] != null) {
+        $status = 'checked';
+    } else {
+        $status = '';
+    }
+    return $status;
 }
