@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+//in this file, we delete checklist items
 
 require __DIR__ . '/../../autoload.php';
 

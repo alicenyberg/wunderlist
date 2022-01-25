@@ -3,6 +3,9 @@
 declare(strict_types=1);
 
 require __DIR__ . '/../../autoload.php';
+
+//in this file, we update the checklist items' completed_at value in the database
+
 $user_id = $_SESSION['user']['id'];
 $task_id = $_GET['task_id'];
 $id = $_GET['id'];

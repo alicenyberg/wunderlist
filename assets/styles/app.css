@@ -105,10 +105,10 @@ ul {
 
 /* WUNDERLIST+ STYLING */
 .display-checklist {
-  width: 50%;
+  width: 60%;
 }
-.display-checklist {
-  padding-right: 40px;
+.display-checklist ul {
+  padding: 0;
 }
 .checklist-item {
   width: 100%;
@@ -120,9 +120,9 @@ ul {
 .checklist-item input {
   transform: translateX(-33px);
 }
-/* .checklist-item div {
-  transform: translateX(-80px);
-} */
+.checklist-item div {
+  text-align: left;
+}
 .checklist-item button {
   margin: 5px;
   text-align: end;

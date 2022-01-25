@@ -2,6 +2,9 @@
 require __DIR__ . '/app/autoload.php';
 require __DIR__ . '/views/header.php';
 
+//new page added to the project. On this page, the user sees all lists with their tasks and
+//can mark the tasks as completed or uncompleted. It is also possible to mark all tasks as
+//completed by clicking the button.
 
 $user_id = $_SESSION['user']['id'];
 $lists = get_all_lists($database);
