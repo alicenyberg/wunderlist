@@ -40,3 +40,5 @@ Tested by the following people:
 
 1. `overview.php` New page called 'overview' where one sees all lists and their respective tasks. 'Overview'has been added to the nav bar and styling has been added to the css file.
 2. `complete_all.php` Logic that enables the user to check all tasks in a given list as completed with the click of a button.
+3. `edit_task.php:42-87` Section for adding a checklist to a task. The checklist can be updated with up to five items at once. Each checklist is linked to the specific task being updated. The checklist items can be individually deleted and marked as completed or uncompleted. The checklist items are saved in a new table in the database ('checklist').
+4. `checklist folder` Folder that contains three files for managing checklist items; create, delete and update. `create.php` adds checklist items to the database, `delete.php` (you guessed it) removes checklist items from the database, and `update.php` changes the checklist item's completed_at value.
