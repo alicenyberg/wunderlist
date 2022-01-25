@@ -120,9 +120,9 @@ ul {
 .checklist-item input {
   transform: translateX(-33px);
 }
-.checklist-item div {
+/* .checklist-item div {
   transform: translateX(-80px);
-}
+} */
 .checklist-item button {
   margin: 5px;
   text-align: end;
