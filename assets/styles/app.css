@@ -102,3 +102,65 @@ ul {
 .completed {
   margin-bottom: 80px;
 }
+
+/* WUNDERLIST+ STYLING */
+.display-checklist {
+  width: 60%;
+}
+.display-checklist ul {
+  padding: 0;
+}
+.checklist-item {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 2px solid;
+}
+.checklist-item input {
+  transform: translateX(-33px);
+}
+.checklist-item div {
+  text-align: left;
+}
+.checklist-item button {
+  margin: 5px;
+  text-align: end;
+  transform: translateX(80px);
+}
+.lists-wrapper ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  gap: 30px;
+}
+.lists-wrapper h3 {
+  text-decoration: underline;
+}
+.single-list ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0;
+}
+.single-list h5 {
+  color: sienna;
+}
+.single-list button {
+  margin: 0;
+}
+.checklist-form {
+  display: flex;
+  flex-direction: column;
+}
+.hidden {
+  display: none;
+}
+.checklist-form form {
+  display: flex;
+  flex-direction: column;
+}
+.line-through {
+  text-decoration: line-through;
+}

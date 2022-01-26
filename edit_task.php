@@ -39,6 +39,53 @@ $user_id = $_SESSION['user']['id'];
                 </form> <br>
             </div>
 
+            <!-- WUNDERLIST+ -->
+            <!-- here you can add and edit the checklist for your task -->
+            <div class="display-checklist">
+                <?php $checklist = get_checklist($database); ?>
+                <?php if (isset($checklist)) : ?>
+                    <h5>Checklist:</h5>
+                    <ul>
+                        <?php foreach ($checklist as $item) : ?>
+                            <?php $is_checked = is_checked($item) ?>
+                            <li class="checklist-item">
+                                <!-- Mark checklist item as completed or uncompleted -->
+                                <form action="/app/task/checklist/update.php?id=<?= $item['id'] ?>&task_id=<?= $task['id'] ?>" method="post">
+                                    <input type="checkbox" name="checkbox" <?= $is_checked ?>></input>
+                                </form>
+                                <!-- The content of the checklist item -->
+                                <div>
+                                    <?= $item['content'] ?>
+                                </div>
+                                <!-- delete this checklist item -->
+                                <button><a href="/app/task/checklist/delete.php?id=<?= $item['id'] ?>&task_id=<?= $task['id'] ?>">delete</a></button>
+                            </li>
+                        <?php endforeach ?>
+                    </ul>
+                <?php endif ?>
+            </div>
+            <div class="checklist-wrapper">
+                <div class="checklist-button">
+                    <button>Add checklist to this task</button>
+                </div>
+                <div class="checklist-form hidden">
+                    <br>
+                    <form action="/app/task/checklist/create.php?id=<?= $task['id'] ?>" method="post">
+                        <label for="checklist-item"></label>
+                        <input type="text" name="checklist-item[]">
+                        <label for="checklist-item"></label>
+                        <input type="text" name="checklist-item[]">
+                        <label for="checklist-item"></label>
+                        <input type="text" name="checklist-item[]">
+                        <label for="checklist-item"></label>
+                        <input type="text" name="checklist-item[]">
+                        <label for="checklist-item"></label>
+                        <input type="text" name="checklist-item[]">
+                        <button>Add to checklist</button>
+                    </form>
+                </div>
+            </div>
+
             <!-- here you can delete a task -->
             <div class="delete-wrapper">
                 <h4>Want to delete your task?</h4>
@@ -49,3 +96,5 @@ $user_id = $_SESSION['user']['id'];
         <?php endif ?>
     <?php endforeach ?>
 </div>
+
+<?php require __DIR__ . '/views/footer.php';
